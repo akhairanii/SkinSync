@@ -3,7 +3,7 @@ import { useLocation, Link, Navigate } from "react-router-dom";
 import skincareSets from "../data/skincareSet";
 import individualProducts from "../data/individualProduct";
 import ProductCard from "../components/ProductCard";
-import ProductDetailModal from "../components/Modals/ProductDetailModal";
+import ProductDetailModal from "../components/modals/ProductDetailModal";
 
 export default function Recommendations() {
   const location = useLocation();
