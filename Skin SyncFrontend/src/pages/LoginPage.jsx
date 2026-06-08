@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import AuthModal from "../components/modals/AuthModal.jsx";
+import AuthModal from "../components/modals/authModal.jsx";
 import "../styles/authModal.css";
 
 export default function LoginPage() {
