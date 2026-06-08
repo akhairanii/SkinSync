@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import LegalModal from "../components/Modals/legalModal";
+import LegalModal from "../components/modals/legalModal";
 import legalData from "../data/legalData";
 import axios from "axios";
 import "../styles/footer.css";
