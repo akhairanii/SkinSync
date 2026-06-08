@@ -6,7 +6,7 @@ import skincareSets from "../data/skincareSet";
 import individualProducts from "../data/individualProduct";
 
 import ProductCard from "../components/ProductCard";
-import productDetailModal from "../components/Modals/productDetailModal";
+import ProductDetailModal from "../components/Modals/ProductDetailModal";
 
 export default function ProductLibraryPage() {
   const location = useLocation();
