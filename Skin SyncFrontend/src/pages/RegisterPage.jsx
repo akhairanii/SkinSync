@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import AuthModal from "../components/Modals/authModal";
+import AuthModal from "../components/modals/authModal";
 import "../styles/auth.css";
 
 const Registerpage = () => {
