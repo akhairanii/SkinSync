@@ -1,0 +1,580 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap');
+
+.routine-page {
+  padding: 130px 20px 80px;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.5s ease;
+}
+
+.routine-page.am {
+  background: linear-gradient(180deg, #fff5e6 0%, #ffffff 100%);
+}
+
+.routine-page.pm {
+  background: linear-gradient(180deg, #f3e5f5 0%, #ffffff 100%);
+}
+
+.routine-header {
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.back-btn {
+  text-decoration: none;
+  color: #888;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: transparent;
+  /* Posisi Absolut di kiri */
+  position: absolute;
+  left: 0;
+  top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.back-btn:hover {
+  color: #ff6b81;
+  transform: translateX(-3px);
+}
+
+.routine-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ff6b81;
+  background: rgba(255, 107, 129, 0.1);
+  padding: 5px 12px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.routine-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #2d3436;
+  margin: 15px 0 10px;
+}
+
+.routine-sub {
+  color: #636e72;
+  font-size: 0.95rem;
+}
+
+.highlight {
+  color: #ff6b81;
+}
+
+.day-selector-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    width: 100%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.day-selector-container::-webkit-scrollbar {
+    display: none;
+}
+
+.day-selector {
+  display: flex;
+  gap: 12px;
+  min-width: max-content;
+  padding: 0 20px;
+}
+
+.day-btn {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 10px 14px;
+  min-width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.day-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #888;
+}
+
+.day-dot {
+  width: 6px;
+  height: 6px;
+  background: #ff6b81;
+  border-radius: 50%;
+  margin-top: 4px;
+}
+
+.day-btn.active {
+  background: #2d3436;
+  border-color: #2d3436;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.day-btn.active .day-name { color: white; }
+
+.time-switcher {
+  display: flex;
+  background: white;
+  padding: 5px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin: 0 auto 30px;
+  max-width: 320px;
+}
+
+.time-btn {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: transparent;
+  color: #888;
+  transition: 0.3s ease;
+}
+
+.time-btn.active {
+  background: #2d3436;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.progress-container {
+  max-width: 500px;
+  margin: 0 auto 40px;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.progress-track {
+  height: 8px;
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff9a9e, #ff6b81);
+  transition: width 0.5s ease;
+}
+
+.routine-list {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.routine-step {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.step-time-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 65px; /* Lebar tetap agar sejajar */
+}
+
+.time-badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #2d3436;
+  background: white;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+  white-space: nowrap;
+}
+
+.step-line {
+  width: 2px;
+  flex-grow: 1;
+  background: #e0e0e0;
+  border-radius: 2px;
+}
+
+.routine-step:last-child .step-line { display: none; }
+
+.step-card {
+  flex-grow: 1;
+  background: white;
+  padding: 18px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  border: 1px solid rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.step-card:active { transform: scale(0.98); }
+.step-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.step-type {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ff6b81;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.step-freq {
+  font-size: 0.7rem;
+  color: #aaa;
+  font-weight: 500;
+}
+
+.checkbox-circle {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: white;
+  transition: 0.3s;
+}
+
+.checkbox-circle.checked {
+  background: #4cd137;
+  border-color: #4cd137;
+}
+
+.step-product {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2d3436;
+  margin: 5px 0;
+}
+
+.step-desc {
+  font-size: 0.85rem;
+  color: #636e72;
+  line-height: 1.5;
+}
+
+.routine-step.completed .step-card {
+  background: #f8fff9;
+  border-color: #4cd137;
+  opacity: 0.8;
+}
+
+.special-card {
+  background: linear-gradient(135deg, #fff0f5, #ffeaf2);
+  border: 1px dashed #ff6b81;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 0 auto 30px;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  animation: slideIn 0.5s ease;
+}
+
+.special-icon {
+    font-size: 2rem;
+}
+
+.special-content {
+    flex-grow: 1;
+}
+
+.special-content h4 {
+    font-size: 0.75rem;
+    color: #ff6b81;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    font-weight: 700;
+}
+
+.special-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin: 0 0 5px;
+    color: #2d3436;
+}
+.special-content p {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.special-check input {
+  width: 24px;
+  height: 24px;
+  accent-color: #ff6b81;
+  cursor: pointer;
+}
+
+.tips-trigger-card {
+  max-width: 600px;
+  margin: 40px auto 0;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  border: 1px solid #f0f0f0;
+  transition: transform 0.3s;
+}
+
+.tips-trigger-card:hover {
+  transform: translateY(-3px);
+  border-color: #ffb7c5;
+}
+
+.trigger-icon {
+  font-size: 2.5rem;
+  background: #fff0f5;
+  width: 60px; height: 60px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+}
+
+.trigger-content {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.trigger-content h3 {
+  font-size: 1rem;
+  color: #2d3436;
+  margin: 0 0 5px;
+  font-weight: 700;
+}
+
+.trigger-content p {
+  font-size: 0.85rem;
+  color: #636e72;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.trigger-btn {
+  text-decoration: none;
+  background: #2d3436;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 0.3s;
+}
+
+.trigger-btn:hover {
+  background: #ff6b81;
+}
+
+.celebration-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.celebration-card {
+    background: #ffffff;
+    width: 85%;
+    max-width: 400px;
+    border-radius: 24px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    border: 4px solid rgba(255, 255, 255, 0.5);
+    animation: popUpBouncy 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.celebration-card::before {
+    content: '';
+    position: absolute;
+    top: -50px; right: -50px;
+    width: 150px; height: 150px;
+    background: radial-gradient(circle, #ff9a9e 0%, transparent 70%);
+    opacity: 0.3;
+}
+
+.confetti-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    animation: wave 1s infinite alternate;
+}
+
+.celebration-card h2 {
+    font-family: 'Playfair Display', serif;
+    color: #2d3436;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.celebration-card p {
+    font-family: 'Poppins', sans-serif;
+    color: #636e72;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.celebration-btn {
+    background: linear-gradient(135deg, #ff6b81 0%, #ff4757 100%);
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(255, 107, 129, 0.3);
+    transition: transform 0.2s;
+}
+
+.celebration-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+@keyframes slideIn {
+    from { opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popUp {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes popUpBouncy {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes wave {
+    0% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(10deg);
+    }
+}
+
+@media (max-width: 768px) {
+  .routine-page {
+    padding-top: 110px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .routine-header {
+    position: relative;
+    padding-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .back-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 0.85rem;
+  }
+
+  .routine-title {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .day-selector {
+    justify-content: flex-start;
+  }
+
+  .tips-trigger-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .trigger-content {
+    text-align: center;
+  }
+
+  .trigger-btn {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+}

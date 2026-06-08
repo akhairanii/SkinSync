@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+.skin-page {
+  text-align: center;
+  padding: 100px 20px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fff0f5 0%, #ffffff 50%, #fff0f5 100%);
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  cursor: context-menu;
+}
+
+.skin-header {
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+.skin-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ff6b81;
+  background: rgba(255, 107, 129, 0.1);
+  padding: 6px 14px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  letter-spacing: 1.5px;
+}
+
+.skin-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #2d3436;
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.2;
+  text-shadow: 0 3px 8px rgba(255, 85, 170, 0.3);
+}
+
+.skin-sub {
+  font-size: 1.05rem;
+  color: #636e72;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.skin-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.skin-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px 25px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  border: 2px solid transparent;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.skin-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(255, 107, 129, 0.15);
+  border-color: #ff6b81;
+}
+
+.skin-card.selected {
+  border-color: #ff6b81;
+  background: #fff0f5;
+  transform: scale(0.98);
+}
+
+.img-wrapper {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fff, #ffeaa7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  transition: transform 0.4s ease;
+  border: 4px solid white;
+  overflow: hidden;
+}
+
+.skin-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1));
+}
+
+.skin-card:hover .img-wrapper {
+  transform: scale(1.1) rotate(5deg);
+  border-color: #ffb7c5;
+}
+
+.skin-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #2d3436;
+  margin-top: 10px;
+}
+
+.skin-desc {
+  font-size: 0.9rem;
+  color: #636e72;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.skin-card:hover {
+  color: #ff6b81;
+  border-color: #ff6b81;
+}
+
+.skin-card.selected {
+  background: #ff6b81;
+  color: white;
+  border-color: #ff6b81;
+}
+
+.skin-title, .skin-sub, .skin-card {
+  animation: fadeUp 1.2s ease-out;
+}
+
+.analyzing-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.spinner-glow {
+  width: 60px;
+  height: 60px;
+  border: 4px solid #ffeaa7;
+  border-top: 4px solid #ff6b81;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+.analyzing-overlay h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #2d3436;
+  margin-bottom: 10px;
+}
+
+.analyzing-overlay p {
+  color: #636e72;
+  font-size: 0.95rem;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px)
+{
+  .skin-title {
+    font-size: 2.2rem;
+  }
+  .skin-grid {
+    gap: 20px;
+  }
+}

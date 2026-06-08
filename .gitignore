@@ -1,0 +1,13 @@
+# Frontend
+Skin SyncFrontend/node_modules/
+Skin SyncFrontend/dist/
+
+# Backend
+SkinSyncBackend/target/
+SkinSyncBackend/data/
+*.mv.db
+*.trace.db
+
+# IDE
+.idea/
+*.iml

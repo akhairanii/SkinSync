@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap');
+
+.tips-page {
+    padding: 120px 20px 80px;
+    background: linear-gradient(180deg, #fff0f5 0%, #ffffff 100%);
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    cursor: context-menu;
+}
+
+.tips-header {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    position: relative;
+}
+
+.back-link {
+    position: absolute;
+    top: 0; left: 0;
+    text-decoration: none;
+    color: #888;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: #ff6b81;
+    transform: translateX(-5px);
+}
+
+.tips-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #ff6b81;
+    background: rgba(255, 107, 129, 0.1);
+    padding: 6px 16px;
+    border-radius: 50px;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+}
+
+.tips-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #2d3436;
+    margin: 0 0 15px;
+    line-height: 1.2;
+}
+
+.highlight {
+    font-style: italic;
+    color: #ff6b81;
+}
+
+.tips-sub {
+    color: #636e72;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tips-sub strong {
+    font-weight: 600;
+    color: #ff6b81;
+}
+
+.tips-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.tips-category {
+    margin-bottom: 50px;
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.cat-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #2d3436;
+    margin-bottom: 25px;
+    padding-left: 15px;
+    border-left: 5px solid #ff6b81;
+}
+
+.tips-card {
+    background: #ffffff;
+    border-radius: 16px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border: 1px solid rgba(0,0,0,0.05);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.tips-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 129, 0.15);
+    border-color: #ffb7c5;
+}
+
+.tips-question {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tips-question h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #2d3436;
+    font-weight: 600;
+    flex-grow: 1;
+}
+
+.toggle-icon {
+    font-size: 1.2rem;
+    color: #ff6b81;
+    font-weight: bold;
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.tips-answer {
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.4s ease;
+    background-color: #fffcfd;
+}
+
+.tips-answer p {
+    padding: 0 25px 25px;
+    margin: 0;
+    color: #636e72;
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.tips-card.open {
+    border-color: #ff6b81;
+    box-shadow: 0 8px 20px rgba(255, 107, 129, 0.1);
+}
+
+.tips-card.open .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.tips-card.open .tips-answer {
+    max-height: 300px;
+    opacity: 1;
+}
+
+.tips-footer {
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px dashed #ffb7c5;
+}
+
+.tips-footer p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #2d3436;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.tips-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #2d3436 0%, #000000 100%);
+    color: white;
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.tips-btn:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, #ff6b81 0%, #ff4757 100%);
+  box-shadow: 0 15px 30px rgba(255, 107, 129, 0.4);
+}
+
+@keyframes fadeUp
+{
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px)
+{
+    .tips-title {
+        font-size: 2.2rem;
+    }
+    .tips-header {
+        padding: 0 20px;
+    }
+    .back-link {
+        position: static;
+        display: block;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+    .tips-page {
+        padding-top: 100px;
+    }
+}
