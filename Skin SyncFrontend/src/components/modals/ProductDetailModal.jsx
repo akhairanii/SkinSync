@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "../../styles/ProductDetailModal.css";
 
-export default function productDetailModal({ isOpen, onClose, brandData, brandName })
+export default function ProductDetailModal({ isOpen, onClose, brandData, brandName })
 {
     useEffect(() => {
         if(isOpen)
