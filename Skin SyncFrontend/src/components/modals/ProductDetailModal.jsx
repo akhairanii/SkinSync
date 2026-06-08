@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "../../styles/ProductDetailModal.css";
+import "../../styles/productDetailModal.css";
 
 export default function ProductDetailModal({ isOpen, onClose, brandData, brandName })
 {
