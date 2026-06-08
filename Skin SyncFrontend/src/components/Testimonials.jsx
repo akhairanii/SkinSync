@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "../styles/testimonials.css";
 import defaultTestimonials from "../data/testimonials";
-import ReviewModal from "../components/Modals/reviewModal";
+import ReviewModal from "../components/modals/reviewModal";
 import axios from "axios";
 
 export default function Testimonials() {
