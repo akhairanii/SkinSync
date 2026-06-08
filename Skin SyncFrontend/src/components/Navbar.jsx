@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import LogoutModal from "../components/Modals/logoutModal";
+import LogoutModal from "../components/modals/logoutModal";
 import "../styles/navbar.css";
 
 export default function Navbar() {
